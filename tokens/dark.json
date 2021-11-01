@@ -2,7 +2,7 @@
   "theme": {
     "bg": {
       "default": {
-        "value": "#2d040d",
+        "value": "#171717",
         "type": "color"
       },
       "subtle": {
@@ -24,7 +24,7 @@
         "type": "color"
       },
       "muted": {
-        "value": "#f9d0d9",
+        "value": "#eeeeee",
         "type": "color"
       },
       "subtle": {
@@ -34,11 +34,11 @@
     },
     "accent": {
       "default": {
-        "value": "#df1642",
+        "value": "#3d53f5",
         "type": "color"
       },
       "subtle": {
-        "value": "#100105",
+        "value": "#060818",
         "type": "color"
       }
     }
