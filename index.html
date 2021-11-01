@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="tailwind.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="p-8">
+      <h1 class="text-4xl font-bold mb-4">Theme Switcher</h1>
+      <button class="p-2 bg-theme-accent-default text-theme-fg-onAccent font-bold" id="switch" onclick="toggleTheme()">Switch</button>
+    </div>
+    <script>
+      function setTheme(name) {
+        localStorage.setItem("theme", name);
+        document.documentElement.className = name;
+      }
+
+      function toggleTheme() {
+        if (localStorage.getItem("theme") === "dark-theme") {
+          setTheme("light-theme");
+        } else {
+          setTheme("dark-theme");
+        }
+      }
+
+      (function () {
+        if (localStorage.getItem("theme") === "dark-theme") {
+          setTheme("dark-theme");
+        } else {
+          setTheme("light-theme");
+        }
+      })();
+    </script>
+  </body>
+</html>

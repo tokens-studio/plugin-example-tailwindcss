@@ -1,0 +1,4 @@
+html,
+body {
+  @apply flex bg-theme-bg-subtle h-full w-full text-theme-fg-default;
+}

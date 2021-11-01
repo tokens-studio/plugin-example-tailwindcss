@@ -1,5 +1,5 @@
 .global-theme {
-          --colors-black: #171717;
+  --colors-black: #171717;
   --colors-white: #ffffff;
   --colors-red-50: #FFF5F7;
   --colors-red-100: #fce8ec;
@@ -34,4 +34,4 @@
   --colors-grey-800: #424242;
   --colors-grey-900: #323232;
   --colors-grey-950: #212121;
-      }
+}

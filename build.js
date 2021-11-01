@@ -1,15 +1,14 @@
 const StyleDictionaryPackage = require('style-dictionary');
+const {createArray} = require('./fns');
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
 
 StyleDictionaryPackage.registerFormat({
-    name: 'css/variables',
-    formatter: function (dictionary, config) {
-      return `${this.selector} {
-        ${dictionary.allProperties.map(prop => `  --${prop.name}: ${prop.value};`).join('\n')}
-      }`
-    }
-  });  
+  name: 'css/variables',
+  formatter: function (dictionary, config) {
+    return `${this.selector} {\n${dictionary.allProperties.map(prop => `  --${prop.name}: ${prop.value};`).join('\n')}\n}`
+  }
+});
 
 StyleDictionaryPackage.registerTransform({
     name: 'sizes/px',
@@ -29,15 +28,21 @@ function getStyleDictionaryConfig(theme) {
     "source": [
       `tokens/${theme}.json`,
     ],
+    "format": {
+      createArray
+    },
     "platforms": {
       "web": {
         "transforms": ["attribute/cti", "name/cti/kebab", "sizes/px"],
         "buildPath": `output/`,
         "files": [{
-            "destination": `${theme}.css`,
-            "format": "css/variables",
-            "selector": `.${theme}-theme`
-          }]
+          "destination": `${theme}.json`,
+          "format": "createArray"
+        }, {
+          "destination": `${theme}.css`,
+          "format": "css/variables",
+          "selector": `.${theme}-theme`
+        }]
       }
     }
   };

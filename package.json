@@ -2,8 +2,18 @@
     "name": "my-app",
     "version": "0.1.0",
     "private": true,
-    "scripts": {},
+    "scripts": {
+        "build": "postcss ./styles.css -o ./tailwind.css"
+    },
     "dependencies": {
+        "postcss-cli": "^9.0.1",
+        "save-dev": "0.0.1-security",
         "style-dictionary": "^3.0.2"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.0",
+        "postcss": "^8.3.11",
+        "postcss-import": "^14.0.2",
+        "tailwindcss": "^2.2.19"
     }
 }
