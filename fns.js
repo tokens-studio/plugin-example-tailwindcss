@@ -21,18 +21,13 @@ function deepen(obj) {
 }
 
 function createArray({ dictionary, platform }) {
-  const arr = dictionary.allTokens.reduce((acc, token) => {
-    acc.push(token);
-    return acc;
-  }, []);
-  // const deep = deepen(obj)
+  const arr = dictionary.allTokens;
   return JSON.stringify(arr);
 }
 
 function filterTokensByType(type, tokens) {
   const obj = tokens.reduce((acc, cur) => {
     if (cur.type === type) {
-      console.log("Cur is", cur);
       acc[cur.path.join(".")] = `var(--${cur.name}, ${cur.value})`
     }
     return acc

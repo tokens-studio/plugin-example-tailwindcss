@@ -3,7 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "build": "postcss ./styles.css -o ./tailwind.css"
+        "build-sd": "node build.js",
+        "build-tw": "postcss ./styles.css -o ./tailwind.css",
+        "build": "npm run build-sd && npm run build-tw"
     },
     "dependencies": {
         "postcss-cli": "^9.0.1",
